@@ -4,8 +4,8 @@
 
 # BetterBangs
 
-This extension adds DuckDuckGo bangs to [StartPage](https://www.startpage.com/), [Bing](https://www.bing.com/), and [Google](https://www.google.com/).
-It has an optional history tracking feature to see which Bangs you use the most. A nice stat.
+This extension adds DuckDuckGo bangs to A lot of search engines. Like [StartPage](https://www.startpage.com/), [Bing](https://www.bing.com/), and [Google](https://www.google.com/).
+It has an optional bang history tracking feature to see which Bangs you use the most. A nice stat.
 
 ## Supported Search Engines
 
@@ -24,7 +24,7 @@ It has an optional history tracking feature to see which Bangs you use the most.
 | Mojeek         | `https://*.mojeek.com/*`       |
 
 ## Notes
-I highly recommend using Startpage, since it has Google results as well + a lot of privacy. But if you still decide to use Google, the extension will only work on Google.com and Google.nl domains. So if it doesn't work, that is the reason.
+I highly recommend using Startpage, since it has Google results as well + a lot of privacy. But if you still decide to use Google, the extension will only work on the Google domaisn from the tabke above. So if it doesn't work, that is the reason. Also it might not work always on Startpage if it is on POST requests.
 
 It works by checking if the query contains an !, if it does it checks the list of bangs and redirects you to the site you want to go to.
 The last time the Bang list was updated was on 28-08-2024.
@@ -32,7 +32,7 @@ The last time the Bang list was updated was on 28-08-2024.
 ## Contributing
 Please fork this repository and create a new pull request to contribute to it.
 
-If you notice any errors, please create a new issue on GitHub.
+If you notice any errors, or want to update the bangs.json file, please create a new issue on GitHub.
 
 # License
 This extension is licensed under the MIT License.

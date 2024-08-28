@@ -20,7 +20,7 @@ It has an optional bang history tracking feature to see which Bangs you use the 
 | Swisscows      | `https://*.swisscows.com/*`    |
 | You.com        | `https://*.you.com/*`          |
 | Qwant          | `https://*.qwant.com/*`        |
-| Yandex         | `https://*.yandex.com/*`       |
+| Yandex         | `https://*.yandex.com/*`, `https://*.yandex.ru/*`       |
 | Mojeek         | `https://*.mojeek.com/*`       |
 
 ## Notes

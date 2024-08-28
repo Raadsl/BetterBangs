@@ -113,6 +113,7 @@ chrome.webRequest.onBeforeRequest.addListener(
       "https://*.qwant.com/v3/search/web?*",
       "https://*.qwant.com/?*",
       "https://*.yandex.com/search/?*",
+      "https://*.yandex.ru/search/?*",
       "https://*.mojeek.com/search?*",
       "https://*.google.co.uk/search?*",
       "https://*.google.ca/search?*",

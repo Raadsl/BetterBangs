@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Bangs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      padding-top: 60px;
+      width: 350px;
+      margin: 0 auto;
+      background-color: #ffffff;
+    }
+    nav {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: space-around;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    nav a:hover {
+      background-color: #0056b3;
+    }
+    .content {
+      flex-grow: 1;
+      padding: 10px;
+      overflow-y: auto;
+      margin-top: 60px;
+    }
+    h2, h3 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .bang-title {
+      flex-grow: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 150px; /* Adjust as necessary */
+    }
+    .usage-count, .action-button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .usage-count:hover, .action-button:hover {
+      background-color: #0056b3;
+    }
+    .delete-button, .x-button {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .delete-button:hover, .x-button:hover {
+      background-color: #c82333;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 34px;
+      height: 20px;
+      margin-left: 10px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 34px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 12px;
+      width: 12px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #007BFF;
+    }
+    input:checked + .slider:before {
+      transform: translateX(14px);
+    }
+    .setting-section {
+      margin-top: 20px;
+      background-color: #f8f9fa;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .setting-section h3 {
+      margin-bottom: 10px;
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#allbangs">All Bangs</a>
+    <a href="#bangshistory">Bangs History</a>
+    <a href="#settings">Settings</a>
+  </nav>
+  <div class="content" id="allbangs">
+    <h2>All Bangs</h2>
+    <input type="text" id="searchInput" placeholder="Search bangs...">
+    <ul id="bangsList"></ul>
+  </div>
+  <div class="content" id="bangshistory" style="display: none;">
+    <h2>Bangs History</h2>
+    <input type="text" id="historySearchInput" placeholder="Search history...">
+    <ul id="historyList"></ul>
+  </div>
+  <div class="content" id="settings" style="display: none;">
+    <h2>Settings</h2>
+    <div class="setting-section">
+      <h3>History</h3>
+      <div class="setting-item">
+        <label>Enable History Collection</label>
+        <label class="switch">
+          <input type="checkbox" id="optInHistory">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <button id="deleteHistoryButton" class="delete-button">Delete History</button>
+    </div>
+    <div class="setting-section">
+      <h3>Bangs</h3>
+      <div class="setting-item">
+        <label>Use Whitelist Mode</label>
+        <label class="switch">
+          <input type="checkbox" id="useWhitelist">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="setting-item">
+        <label>Enable Blacklist</label>
+        <label class="switch">
+          <input type="checkbox" id="enableBlacklist">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="setting-item">
+        <h3>Blacklist</h3>
+        <input list="bangsDatalist" type="text" id="blacklistInput" placeholder="Enter bang to add to blacklist...">
+        <button id="addToBlacklistButton" class="action-button">Add to Blacklist</button>
+        <ul id="blacklist"></ul>
+      </div>
+      <div class="setting-item">
+        <h3>Whitelist</h3>
+        <input list="bangsDatalist" type="text" id="whitelistInput" placeholder="Enter bang to add to whitelist...">
+        <button id="addToWhitelistButton" class="action-button">Add to Whitelist</button>
+        <ul id="whitelist"></ul>
+      </div>
+    </div>
+    <datalist id="bangsDatalist"></datalist>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

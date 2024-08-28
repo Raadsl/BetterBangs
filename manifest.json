@@ -24,8 +24,7 @@
     "https://*.google.de/*"
   ],
   "background": {
-    "service_worker": "background.js",
-    "type": "module"
+    "scripts": ["background.js"]
   },
   "action": {
     "default_icon": {
@@ -40,5 +39,11 @@
     "128": "icons/icon128.png",
     "256": "icons/icon256.png",
     "500": "icons/icon500.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "BetterBangs@raadsl",
+      "strict_min_version": "109.0"
+    }
   }
 }

@@ -118,9 +118,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const usageCount = bang.usageCount || 0;
         const formattedCount = formatUsageCount(usageCount);
 
-        listItem.innerHTML = `
-          <span class="bang-title" title="${bang.bang} - ${bang.title}">${bang.bang} - ${bang.title}</span>
-          ` + (historyOptIn ? `<span class="usage-count" title="You used this bang ${usageCount} times">${formattedCount}</span>` : '');
+        const bangTitle = document.createElement('span');
+        bangTitle.className = 'bang-title';
+        bangTitle.title = `${bang.bang} - ${bang.title}`;
+        bangTitle.textContent = `${bang.bang} - ${bang.title}`;
+
+        listItem.appendChild(bangTitle);
+
+        if (historyOptIn) {
+          const usageCountSpan = document.createElement('span');
+          usageCountSpan.className = 'usage-count';
+          usageCountSpan.title = `You used this bang ${usageCount} times`;
+          usageCountSpan.textContent = formattedCount;
+          listItem.appendChild(usageCountSpan);
+        }
         list.appendChild(listItem);
       });
     });
@@ -154,11 +165,19 @@ document.addEventListener('DOMContentLoaded', () => {
   
         listItem.classList.add('history-item');
         listItem.title = new Date(item.timestamp).toLocaleString();
-        listItem.innerHTML = `
-          <div class="history-date">${hourDate}</div>
-          <div>${item.bang.title} (${item.bang.bang})</div>
-          <div>${item.originalQuery}</div>
-        `;
+        const historyDateDiv = document.createElement('div');
+        historyDateDiv.className = 'history-date';
+        historyDateDiv.textContent = hourDate;
+
+        const bangTitleDiv = document.createElement('div');
+        bangTitleDiv.textContent = `${item.bang.title} (${item.bang.bang})`;
+
+        const originalQueryDiv = document.createElement('div');
+        originalQueryDiv.textContent = item.originalQuery;
+
+        listItem.appendChild(historyDateDiv);
+        listItem.appendChild(bangTitleDiv);
+        listItem.appendChild(originalQueryDiv);
         historyList.appendChild(listItem);
       });
     });
@@ -217,10 +236,16 @@ document.addEventListener('DOMContentLoaded', () => {
     element.innerHTML = '';
     list.forEach(bang => {
       const listItem = document.createElement('li');
-      listItem.innerHTML = `
-        ${bang}
-        <button class="x-button" data-list="${listName}" data-bang="${bang}">X</button>
-      `;
+      const bangText = document.createTextNode(bang);
+
+      const xButton = document.createElement('button');
+      xButton.className = 'x-button';
+      xButton.dataset.list = listName;
+      xButton.dataset.bang = bang;
+      xButton.textContent = 'X';
+
+      listItem.appendChild(bangText);
+      listItem.appendChild(xButton);
       element.appendChild(listItem);
     });
 

@@ -5,8 +5,11 @@ let bangs = [{ "bang": "!g", "title": "Google", "url": "https://encrypted.google
 fetch(chrome.runtime.getURL('bangs.json'))
   .then((response) => response.json())
   .then((data) => {
-    bangs = data.slice().sort((a, b) => b.bang.length - a.bang.length); // sort on bang length in descending order
-
+    bangs = data.bangs.map(bang => ({
+      bang: bang.b,
+      title: bang.t,
+      url: bang.u
+    })).sort((a, b) => b.bang.length - a.bang.length); // sort on bang length in descending order
     // Initialize usage counts in storage if not already present
     chrome.storage.local.get({ bangUsageCounts: {} }, (result) => {
       const bangUsageCounts = result.bangUsageCounts;

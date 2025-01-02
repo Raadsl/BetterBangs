@@ -24,7 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
   fetch(chrome.runtime.getURL('bangs.json'))
     .then(response => response.json())
     .then(data => {
-      bangs = data;
+      bangs = data.bangs.map(bang => ({
+        bang: bang.b,
+        title: bang.t,
+        url: bang.u
+      }))
       populateDatalist(bangs); // Populate the datalist for autocomplete
 
       chrome.storage.local.get(
@@ -136,35 +140,39 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-
+  
   function groupHistoryByDate(history) {
     return history.reduce((acc, item) => {
-      const date = new Date(item.timestamp).toDateString();
-      if (!acc[date]) {
-        acc[date] = [];
-      }
-      acc[date].push(item);
-      return acc;
+    const date = new Date(item.timestamp).toDateString();
+    if (!acc[date]) {
+      acc[date] = [];
+    }
+    acc[date].push(item);
+    return acc;
     }, {});
   }
-  
+
   function displayHistory(history) {
     historyList.innerHTML = '';
-  
+
     const groupedHistory = groupHistoryByDate(history);
-    Object.keys(groupedHistory).forEach(date => {
+    Object.keys(groupedHistory)
+    .sort((a, b) => new Date(b) - new Date(a))
+    .forEach(date => {
       const dateLabel = formatDateLabel(date);
       const dateHeader = document.createElement('h3');
       dateHeader.textContent = dateLabel;
       dateHeader.title = new Date(date).toLocaleDateString();
       historyList.appendChild(dateHeader);
-  
-      groupedHistory[date].forEach(item => {
+
+      groupedHistory[date]
+      .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+      .forEach(item => {
         const listItem = document.createElement('li');
-        const hourDate = new Date(item.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  
         listItem.classList.add('history-item');
         listItem.title = new Date(item.timestamp).toLocaleString();
+
+        const hourDate = new Date(item.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         const historyDateDiv = document.createElement('div');
         historyDateDiv.className = 'history-date';
         historyDateDiv.textContent = hourDate;

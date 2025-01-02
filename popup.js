@@ -148,40 +148,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }, {});
   }
   
-  function displayHistory(history) {
-    historyList.innerHTML = '';
-  
-    const groupedHistory = groupHistoryByDate(history);
-    Object.keys(groupedHistory).forEach(date => {
-      const dateLabel = formatDateLabel(date);
-      const dateHeader = document.createElement('h3');
-      dateHeader.textContent = dateLabel;
-      dateHeader.title = new Date(date).toLocaleDateString();
-      historyList.appendChild(dateHeader);
-  
-      groupedHistory[date].forEach(item => {
-        const listItem = document.createElement('li');
-        const hourDate = new Date(item.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  
-        listItem.classList.add('history-item');
-        listItem.title = new Date(item.timestamp).toLocaleString();
-        const historyDateDiv = document.createElement('div');
-        historyDateDiv.className = 'history-date';
-        historyDateDiv.textContent = hourDate;
+function displayHistory(history) {
+  historyList.innerHTML = '';
 
-        const bangTitleDiv = document.createElement('div');
-        bangTitleDiv.textContent = `${item.bang.title} (${item.bang.bang})`;
+  // Sort history by timestamp in descending order
+  const sortedHistory = history.sort((a, b) => b.timestamp - a.timestamp);
 
-        const originalQueryDiv = document.createElement('div');
-        originalQueryDiv.textContent = item.originalQuery;
+  const groupedHistory = groupHistoryByDate(sortedHistory);
+  Object.keys(groupedHistory).forEach(date => {
+    const dateLabel = formatDateLabel(date);
+    const dateHeader = document.createElement('h3');
+    dateHeader.textContent = dateLabel;
+    dateHeader.title = new Date(date).toLocaleDateString();
+    historyList.appendChild(dateHeader);
 
-        listItem.appendChild(historyDateDiv);
-        listItem.appendChild(bangTitleDiv);
-        listItem.appendChild(originalQueryDiv);
-        historyList.appendChild(listItem);
-      });
+    groupedHistory[date].forEach(item => {
+      const listItem = document.createElement('li');
+      const hourDate = new Date(item.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+      listItem.classList.add('history-item');
+      listItem.title = new Date(item.timestamp).toLocaleString();
+      const historyDateDiv = document.createElement('div');
+      historyDateDiv.className = 'history-date';
+      historyDateDiv.textContent = hourDate;
+
+      const bangTitleDiv = document.createElement('div');
+      bangTitleDiv.textContent = `${item.bang.title} (${item.bang.bang})`;
+
+      const originalQueryDiv = document.createElement('div');
+      originalQueryDiv.textContent = item.originalQuery;
+
+      listItem.appendChild(historyDateDiv);
+      listItem.appendChild(bangTitleDiv);
+      listItem.appendChild(originalQueryDiv);
+      historyList.appendChild(listItem);
     });
-  }
+  });
+}
   
   function formatDateLabel(date) {
     const today = new Date();

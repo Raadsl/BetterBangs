@@ -290,13 +290,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function removeBang(listName, bang) {
+    const elementToDisplay = listName === 'blacklist' ? blacklistElement : whitelistElement;
     chrome.storage.local.get({ [listName]: [] }, (result) => {
       const list = result[listName];
       const index = list.indexOf(bang);
       if (index > -1) {
         list.splice(index, 1);
         chrome.storage.local.set({ [listName]: list }, () => {
-          displayList(list, listElement, listName);
+          displayList(list, elementToDisplay, listName);
         });
       }
     });

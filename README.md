@@ -7,6 +7,15 @@
 This extension adds DuckDuckGo bangs to A lot of search engines. Like [StartPage](https://www.startpage.com/), [Bing](https://www.bing.com/), and [Google](https://www.google.com/).
 It has an optional bang history tracking feature to see which Bangs you use the most. A nice statistic to know.
 
+## Installation
+The BetterBangs extension is available to download for anyone using firefox-based browsers or edge. For chromium based browsers, please manually download the crx file
+
+[![Firefox download link](https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png)](https://addons.mozilla.org/en-US/firefox/addon/betterbangs)
+
+Install on [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/betterbangs/dkifiohhaleejodbpijkfmjipogdmapp) 
+or just download it manually as [.crx-file](/BetterBangs.crx) for Chromium
+
+
 ## Supported Search Engines
 
 | Search Engine  | URL(s)                         |

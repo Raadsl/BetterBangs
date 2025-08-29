@@ -1,6 +1,6 @@
 {
-  "last_updated": "2025-01-02T16:08:40.785591",
-  "total_bangs": 13567,
+  "last_updated": "2025-08-29T18:31:17.455432",
+  "total_bangs": 13566,
   "bangs": [
     {
       "b": "!01net",
@@ -1619,7 +1619,7 @@
     },
     {
       "b": "!aichat",
-      "t": "DuckDuckGo AI Chat",
+      "t": "Duck.ai",
       "u": "https://www.duckduckgo.com/?q={{{s}}}&ia=chat&bang=true "
     },
     {
@@ -1764,7 +1764,7 @@
     },
     {
       "b": "!ai",
-      "t": "DuckDuckGo AI Chat",
+      "t": "Duck.ai",
       "u": "https://www.duckduckgo.com/?q={{{s}}}&ia=chat&bang=true "
     },
     {
@@ -2085,7 +2085,7 @@
     {
       "b": "!allegro",
       "t": "Allegro",
-      "u": "http://allegro.pl/listing.php/search?string={{{s}}}"
+      "u": "https://allegro.pl/listing?string={{{s}}}"
     },
     {
       "b": "!allelec",
@@ -4231,6 +4231,11 @@
       "b": "!ass",
       "t": "Amazon Subscribe & Save",
       "u": "https://smile.amazon.com/s?url=srs%3D5856181011&field-keywords={{{s}}}"
+    },
+    {
+      "b": "!assist",
+      "t": "DuckDuckGo Assist",
+      "u": "/?q={{{s}}}&assiston=1"
     },
     {
       "b": "!asterisk",
@@ -9454,7 +9459,7 @@
     },
     {
       "b": "!chat",
-      "t": "DuckDuckGo AI Chat",
+      "t": "Duck.ai",
       "u": "https://www.duckduckgo.com/?q={{{s}}}&ia=chat&bang=true "
     },
     {
@@ -11340,32 +11345,27 @@
     {
       "b": "!cpp",
       "t": "cppreference.com",
-      "u": "http://en.cppreference.com/mwiki/index.php?search={{{s}}}"
+      "u": "/?q={{{s}}}+site:cppreference.com"
     },
     {
       "b": "!cppde",
-      "t": "cppreference",
-      "u": "http://de.cppreference.com/mwiki/index.php?title=Spezial%3ASuche&search={{{s}}}"
+      "t": "cppreference.com",
+      "u": "/?q={{{s}}}+site:de.cppreference.com"
     },
     {
       "b": "!cppr",
-      "t": "Cppreference",
-      "u": "http://en.cppreference.com/mwiki/index.php?title=Special%3ASearch&search={{{s}}}&go=Go"
+      "t": "cppreference.com",
+      "u": "/?q={{{s}}}+site:cppreference.com"
     },
     {
       "b": "!cppref",
       "t": "cppreference.com",
-      "u": "http://en.cppreference.com/mwiki/index.php?title=Special:Search&search={{{s}}}"
+      "u": "/?q={{{s}}}+site:cppreference.com"
     },
     {
       "b": "!cppreference",
-      "t": "Cppreference",
-      "u": "http://cppreference.com/w/?search={{{s}}}"
-    },
-    {
-      "b": "!cppsamples",
-      "t": "C++\u200bSamples",
-      "u": "http://www.cppsamples.com/#/search/{{{s}}}"
+      "t": "cppreference.com",
+      "u": "/?q={{{s}}}+site:cppreference.com"
     },
     {
       "b": "!cproj",
@@ -11515,7 +11515,7 @@
     {
       "b": "!c++ref",
       "t": "cppreference.com",
-      "u": "http://en.cppreference.com/mwiki/index.php?search=Special%3ASearch&search={{{s}}}"
+      "u": "/?q={{{s}}}+site:cppreference.com"
     },
     {
       "b": "!crep",
@@ -15848,6 +15848,11 @@
       "u": "https://find.library.duke.edu/?search_field=all_fields&q={{{s}}}"
     },
     {
+      "b": "!duckai",
+      "t": "Duck.ai",
+      "u": "https://www.duckduckgo.com/?q={{{s}}}&ia=chat&bang=true "
+    },
+    {
       "b": "!duck.co",
       "t": "duck.co",
       "u": "https://duck.co/search/{{{s}}}"
@@ -17905,7 +17910,7 @@
     {
       "b": "!eo",
       "t": "Online Etymology Dictionary",
-      "u": "http://www.etymonline.com/index.php?search={{{s}}}"
+      "u": "https://www.etymonline.com/search?q={{{s}}}"
     },
     {
       "b": "!eop",
@@ -19585,7 +19590,7 @@
     {
       "b": "!fedpack",
       "t": "Fedora Package Search",
-      "u": "https://apps.fedoraproject.org/packages/s/{{{s}}}"
+      "u": "https://packages.fedoraproject.org/search?query={{{s}}}"
     },
     {
       "b": "!fedreg",
@@ -22770,7 +22775,7 @@
     {
       "b": "!gf",
       "t": "Google Finance",
-      "u": "http://finance.google.com/?q={{{s}}}&sa=N&tab=fe"
+      "u": "https://finance.google.com/?q={{{s}}}&sa=N&tab=fe"
     },
     {
       "b": "!gfguru",
@@ -22790,7 +22795,7 @@
     {
       "b": "!gfinance",
       "t": "Google Finance",
-      "u": "http://finance.google.com/?q={{{s}}}&sa=N&tab=fe"
+      "u": "https://finance.google.com/?q={{{s}}}&sa=N&tab=fe"
     },
     {
       "b": "!gfk",
@@ -31275,7 +31280,7 @@
     {
       "b": "!jl",
       "t": "John Lewis",
-      "u": "http://www.johnlewis.com/Search/Search.aspx?SearchTerm={{{s}}}"
+      "u": "https://www.johnlewis.com/search?search-term={{{s}}}"
     },
     {
       "b": "!jlm",
@@ -31395,7 +31400,7 @@
     {
       "b": "!johnlewis",
       "t": "John Lewis",
-      "u": "http://www.johnlewis.com/Search/Search.aspx?SearchTerm={{{s}}}"
+      "u": "https://www.johnlewis.com/search?search-term={{{s}}}"
     },
     {
       "b": "!joinup",
@@ -52398,11 +52403,6 @@
       "u": "http://www.shopzilla.com/{{{s}}}/search"
     },
     {
-      "b": "!shorten",
-      "t": "Cortas - URL shortener",
-      "u": "http://cortas.elpais.com/encode.pl?u=http://{{{s}}}"
-    },
-    {
       "b": "!sho",
       "t": "SymbolHound",
       "u": "http://symbolhound.com/?q={{{s}}}"
@@ -55078,14 +55078,9 @@
       "u": "http://stockcharts.com/h-sc/ui?s={{{s}}}&p=D&yr=0&mn=6&dy=0"
     },
     {
-      "b": "!$",
-      "t": "Stockflare",
-      "u": "https://stockflare.com/#stocks/${{{s}}} "
-    },
-    {
       "b": "!stock",
       "t": "Google Finance",
-      "u": "http://finance.google.com/?q={{{s}}}&sa=N&tab=fe"
+      "u": "https://finance.google.com/?q={{{s}}}&sa=N&tab=fe"
     },
     {
       "b": "!stockphotos",
@@ -57673,11 +57668,6 @@
       "u": "http://opac.tib.uni-hannover.de/DB=1/SET=1/TTL=1/CMD?ACT=SRCHA&IKT=1016&SRT=YOP&TRM={{{s}}}"
     },
     {
-      "b": "!ticker",
-      "t": "Stockflare",
-      "u": "https://stockflare.com/#stocks/${{{s}}} "
-    },
-    {
       "b": "!ticketmaster",
       "t": "Ticket Master",
       "u": "https://www.ticketmaster.com/search?q={{{s}}}"
@@ -59545,7 +59535,7 @@
     {
       "b": "!twp",
       "t": "The Washington Post",
-      "u": "http://www.washingtonpost.com/newssearch/search.html?st={{{s}}}"
+      "u": "https://www.washingtonpost.com/search/?query={{{s}}}"
     },
     {
       "b": "!twpw",
@@ -62483,6 +62473,11 @@
       "u": "https://www.wap.org/search?q={{{s}}}"
     },
     {
+      "b": "!wapo",
+      "t": "The Washington Post",
+      "u": "https://www.washingtonpost.com/search/?query={{{s}}}"
+    },
+    {
       "b": "!warframe",
       "t": "Warframe",
       "u": "http://warframe.wikia.com/wiki/Special:Search?search={{{s}}}&fulltext=Search&ns0=1&ns14=1"
@@ -62515,7 +62510,7 @@
     {
       "b": "!washingtonpost",
       "t": "The Washington Post",
-      "u": "http://www.washingtonpost.com/ac2/wp-dyn/NewsSearch?sb=-1&st={{{s}}}"
+      "u": "https://www.washingtonpost.com/search/?query={{{s}}}"
     },
     {
       "b": "!watchcount",
@@ -65100,7 +65095,7 @@
     {
       "b": "!wpost",
       "t": "Washington Post",
-      "u": "http://www.washingtonpost.com/newssearch/search.html?st={{{s}}}"
+      "u": "https://www.washingtonpost.com/search/?query={{{s}}}"
     },
     {
       "b": "!wpplugins",
@@ -66385,12 +66380,12 @@
     {
       "b": "!yaen",
       "t": "Yandex",
-      "u": "http://yandex.com/yandsearch?text={{{s}}}&lr=103421"
+      "u": "https://yandex.com/yandsearch?text={{{s}}}&lr=103421"
     },
     {
       "b": "!yahoofinau",
       "t": "Yahoo Finance Australia",
-      "u": "https://au.finance.yahoo.com/q?s={{{s}}}"
+      "u": "https://au.finance.yahoo.com/quote/{{{s}}}"
     },
     {
       "b": "!yahoojdic",
@@ -66440,7 +66435,7 @@
     {
       "b": "!yandexen",
       "t": "Yandex",
-      "u": "http://www.yandex.com/yandsearch?text={{{s}}}"
+      "u": "https://yandex.com/yandsearch?text={{{s}}}"
     },
     {
       "b": "!yandexmaps",
@@ -66460,7 +66455,7 @@
     {
       "b": "!yandex",
       "t": "Yandex.Ru",
-      "u": "https://www.yandex.ru/yandsearch?text={{{s}}}"
+      "u": "https://yandex.ru/yandsearch?text={{{s}}}"
     },
     {
       "b": "!yanswers",
@@ -66470,7 +66465,7 @@
     {
       "b": "!yan",
       "t": "yandex.com",
-      "u": "https://www.yandex.com/?q={{{s}}}"
+      "u": "https://yandex.com/search/?text={{{s}}}"
     },
     {
       "b": "!yaoota",
@@ -66495,7 +66490,7 @@
     {
       "b": "!yatr",
       "t": "Yandex Turkey",
-      "u": "https://www.yandex.com.tr/search/?text={{{s}}}"
+      "u": "https://yandex.com.tr/search/?text={{{s}}}"
     },
     {
       "b": "!yatu",
@@ -66510,7 +66505,7 @@
     {
       "b": "!yav",
       "t": "Yandex Video",
-      "u": "http://yandex.ru/video/search?text={{{s}}}"
+      "u": "https://yandex.ru/video/search?text={{{s}}}"
     },
     {
       "b": "!yaw",
@@ -66620,7 +66615,7 @@
     {
       "b": "!yfc",
       "t": "Yahoo Finance Charts",
-      "u": "http://finance.yahoo.com/echarts?s={{{s}}}"
+      "u": "https://finance.yahoo.com/quote/{{{s}}}/chart"
     },
     {
       "b": "!yfd",
@@ -66630,17 +66625,17 @@
     {
       "b": "!yfinance",
       "t": "Yahoo Finance",
-      "u": "http://finance.yahoo.com/q?s={{{s}}}"
+      "u": "https://finance.yahoo.com/quote/{{{s}}}"
     },
     {
       "b": "!yfp",
       "t": "Yahoo Finance (Company Profile)",
-      "u": "http://finance.yahoo.com/q/pr?s={{{s}}}+Profile"
+      "u": "https://finance.yahoo.com/quote/{{{s}}}/profile"
     },
     {
       "b": "!yf",
       "t": "Yahoo Finance",
-      "u": "http://finance.yahoo.com/q?s={{{s}}}"
+      "u": "https://finance.yahoo.com/quote/{{{s}}}"
     },
     {
       "b": "!ygo",

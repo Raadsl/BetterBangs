@@ -1,4 +1,4 @@
-// background.js
+// background-firefox.js
 // Cross-browser compatibility
 const browser = globalThis.browser || globalThis.chrome;
 
@@ -113,7 +113,7 @@ function replaceBang(url, query) {
 // Store tabs that are processing first result bangs
 let firstResultTabs = new Set();
 
-// Listen for web requests (works for both Chrome and Firefox)
+// Listen for web requests (Firefox only)
 if (browser.webRequest) {
   browser.webRequest.onBeforeRequest.addListener(
     (details) => {
@@ -162,51 +162,31 @@ if (browser.webRequest) {
     {
       urls: [
         "https://*.startpage.com/*",
-        "https://*.google.com/*",
-        "https://*.google.nl/*",
-        "https://*.bing.com/*",
-        "https://*.yahoo.com/*",
-        "https://*.ecosia.org/*",
-        "https://*.brave.com/*",
+        "https://*.google.com/search?*",
+        "https://*.google.nl/search?*",
+        "https://*.bing.com/search?*",
+        "https://*.yahoo.com/search?*",
+        "https://*.ecosia.org/search?*",
+        "https://*.brave.com/search?*",
         "https://*.swisscows.com/*",
-        "https://*.you.com/*",
-        "https://*.qwant.com/*",
-        "https://*.yandex.com/*",
-        "https://*.yandex.ru/*",
-        "https://*.mojeek.com/*",
-        "https://*.google.co.uk/*",
-        "https://*.google.ca/*",
-        "https://*.google.com.au/*",
-        "https://*.google.de/*",
-        "https://*.google.co.in/*",
-        "https://*.google.ca/*",
-        "https://*.google.it/*"
+        "https://*.you.com/search?*",
+        "https://*.qwant.com/v3/search/web?*",
+        "https://*.qwant.com/?*",
+        "https://*.yandex.com/search/?*",
+        "https://*.yandex.ru/search/?*",
+        "https://*.mojeek.com/search?*",
+        "https://*.google.co.uk/search?*",
+        "https://*.google.ca/search?*",
+        "https://*.google.com.au/search?*",
+        "https://*.google.de/search?*"
       ]
     },
     ["blocking"]
   );
 }
 
-// Listen for messages from content script to handle bang processing
+// Listen for messages from content script
 browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.action === 'checkBang' && request.query) {
-    replaceBang(request.url, request.query).then(newUrl => {
-      if (newUrl === "FIRST_RESULT_MARKER") {
-        // Mark this tab for first result processing
-        firstResultTabs.add(sender.tab.id);
-        sendResponse({ action: 'processFirstResult', originalQuery: request.query.replace(/!/g, '').trim() });
-      } else if (newUrl) {
-        sendResponse({ action: 'redirect', url: newUrl });
-      } else {
-        sendResponse({ action: 'continue' });
-      }
-    }).catch(error => {
-      console.error('[BetterBangs] Error in replaceBang:', error);
-      sendResponse({ action: 'continue' });
-    });
-    return true; // Keep message channel open for async response
-  }
-  
   if (request.action === 'redirectToFirstResult' && request.url) {
     // Redirect to the first result
     browser.tabs.update(sender.tab.id, { url: request.url });

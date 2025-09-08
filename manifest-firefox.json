@@ -1,10 +1,13 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "BetterBangs",
   "version": "1.4.1",
   "description": "Adds *ALL* DDG !Bangs to a lot of search engines including Startpage, Bing and Google.",
-  "permissions": ["storage", "tabs", "scripting"],
-  "host_permissions": [
+  "permissions": [
+    "storage",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
     "https://*.startpage.com/*",
     "https://*.google.com/*",
     "https://*.google.nl/*",
@@ -26,12 +29,10 @@
     "https://*.google.it/*"
   ],
   "background": {
-    "service_worker": "background.js"
+    "scripts": ["background.js"],
+    "persistent": false
   },
-  "web_accessible_resources": [{
-    "resources": ["bangs.json"],
-    "matches": ["<all_urls>"]
-  }],
+  "web_accessible_resources": ["bangs.json"],
   "content_scripts": [
     {
       "matches": [
@@ -59,7 +60,7 @@
       "run_at": "document_end"
     }
   ],
-  "action": {
+  "browser_action": {
     "default_icon": {
       "64": "icons/icon64.png"
     },

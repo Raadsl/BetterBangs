@@ -37,7 +37,7 @@ I highly recommend using Startpage, since it has the same results as Google + it
 
 It works by checking if the query contains an !, if it does it checks the local list of bangs and redirects you to the site you want to go to. There is an opt-in setting to enable automaticvally opening the first result on the search engine you are using if you just add ! without any bang.
 
-The last time the Bangs-list was updated was on `08-09-2025`.
+The last time the Bangs-list was updated was on `07-04-2026`.
 
 ## Contributing
 Please fork this repository and create a new pull request to contribute to it.

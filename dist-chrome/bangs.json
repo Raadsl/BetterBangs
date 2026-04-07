@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-09-08T18:17:14.913740",
+  "last_updated": "2026-04-07T12:29:07.384398",
   "total_bangs": 13567,
   "bangs": [
     {
@@ -4045,7 +4045,7 @@
     {
       "b": "!asana",
       "t": "Asana",
-      "u": "https://app.asana.com/0/search/{{{s}}}"
+      "u": "https://app.asana.com/0/search?q={{{s}}}"
     },
     {
       "b": "!asapsupplies",
@@ -5060,7 +5060,7 @@
     {
       "b": "!bahn",
       "t": "Deutsche Bahn Reiseauskunft",
-      "u": "http://reiseauskunft.bahn.de/bin/query.exe/dn?S=&Z={{{s}}}"
+      "u": "https://www.bahn.de/buchung/start?zo={{{s}}}"
     },
     {
       "b": "!baidu",
@@ -24880,12 +24880,12 @@
     {
       "b": "!gsau",
       "t": "Google Shopping Australia",
-      "u": "https://www.google.com.au/search?biw=1920&bih=947&tbm=shop&q={{{s}}}"
+      "u": "https://www.google.com.au/search?udm=28&q={{{s}}}"
     },
     {
       "b": "!gsbr",
       "t": "Google Shopping (BR)",
-      "u": "http://www.google.com.br/search?q={{{s}}}&hl=pt-BR&safe=off&biw=1108&bih=651&prmd=imvns&source=univ&tbm=shop&tbo=u&sa=X&ei=ZculTqjGLcvAgQf5n_CxBQ&ved=0CJkBEK0E"
+      "u": "https://www.google.com.br/search?udm=28&q={{{s}}}"
     },
     {
       "b": "!gsc",
@@ -24915,7 +24915,7 @@
     {
       "b": "!gs.es",
       "t": "Google Shopping ES",
-      "u": "https://www.google.es/search?tbm=shop&q={{{s}}}"
+      "u": "https://www.google.es/search?udm=28&q={{{s}}}"
     },
     {
       "b": "!gsg",
@@ -24925,7 +24925,7 @@
     {
       "b": "!gs",
       "t": "Google Shopping",
-      "u": "http://www.google.com/products?q={{{s}}}&sa=N&tab=pf"
+      "u": "https://www.google.com/search?udm=28&q={{{s}}}"
     },
     {
       "b": "!gsheet",
@@ -24945,7 +24945,7 @@
     {
       "b": "!gshopping",
       "t": "Google Shopping",
-      "u": "https://www.google.com/products?q={{{s}}}&sa=N&tab=pf"
+      "u": "https://www.google.com/search?udm=28&q={{{s}}}"
     },
     {
       "b": "!gsi",
@@ -24955,7 +24955,7 @@
     {
       "b": "!gsit",
       "t": "Google Shopping IT",
-      "u": "https://www.google.it/search?hl=it&tbm=shop&q={{{s}}}"
+      "u": "https://www.google.it/search?udm=28&q={{{s}}}"
     },
     {
       "b": "!gsk",
@@ -25035,7 +25035,7 @@
     {
       "b": "!gsuk",
       "t": "Google Shopping UK",
-      "u": "http://www.google.co.uk/search?q={{{s}}}&tbm=shop"
+      "u": "https://www.google.co.uk/search?udm=28&q={{{s}}}"
     },
     {
       "b": "!gsupport",
@@ -25045,7 +25045,7 @@
     {
       "b": "!gsus",
       "t": "Google Shopping US",
-      "u": "https://www.google.com/search?tbm=shop&q={{{s}}}&gws_rd=cr"
+      "u": "https://www.google.com/search?udm=28&q={{{s}}}"
     },
     {
       "b": "!gsv",
@@ -41165,7 +41165,7 @@
     {
       "b": "!nixopt",
       "t": "NixOS options",
-      "u": "https://nixos.org/nixos/options.html#{{{s}}}"
+      "u": "https://search.nixos.org/options?query={{{s}}}"
     },
     {
       "b": "!nixos",
@@ -52385,7 +52385,7 @@
     {
       "b": "!shopping",
       "t": "Google Shopping",
-      "u": "https://www.google.com/products?q={{{s}}}&sa=N&tab=pf"
+      "u": "https://www.google.com/search?udm=28&q={{{s}}}"
     },
     {
       "b": "!shopto",

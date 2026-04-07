@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "BetterBangs",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Adds *ALL* DDG !Bangs to a lot of search engines including Startpage, Bing and Google.",
   "permissions": ["storage", "tabs", "scripting"],
   "host_permissions": [
